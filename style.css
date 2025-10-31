@@ -64,6 +64,7 @@ body {
   background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
   text-align: center;
   padding: 0 1rem;
+  background-image: url("assets/Katabasis-Logo.jpg");
 }
 
 #hero h1 {
