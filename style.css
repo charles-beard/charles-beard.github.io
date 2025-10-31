@@ -61,7 +61,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #1a1a1a00, #0f0f0f);
   text-align: center;
   padding: 0 1rem;
   background-image: url("assets/Katabasis-Logo.jpg");
