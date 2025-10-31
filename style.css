@@ -64,6 +64,7 @@ body {
   text-align: center;
   padding: 0 1rem;
   background-image: url("assets/Katabasis-Logo.jpg");
+  background-size: 80vh;
 }
 
 #hero h1 {
