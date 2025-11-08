@@ -13,6 +13,12 @@
   scroll-behavior: smooth;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-dark);
@@ -57,7 +63,9 @@ body {
 
 /* Hero Section */
 #hero {
-  height: 80vh;
+  height: 60vh;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  align-content: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,15 +74,18 @@ body {
   background-image: url("assets/Katabasis-Logo.jpg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 #hero h1 {
+  transform: translateY(120px);
   font-size: 2.5rem;
   margin-bottom: 1rem;
   letter-spacing: 1px;
 }
 
 #hero p {
+  transform: translateY(120px);
   color: #b5b5b5;
   font-size: 1.1rem;
 }
@@ -84,6 +95,7 @@ section {
   max-width: 800px;
   margin: 4rem auto;
   padding: 0 1rem;
+  scroll-margin-top: 4rem;
 }
 
 h2 {
@@ -106,6 +118,19 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+.logo a {
+  text-decoration: none;
+  color: var(--text);
+}
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+.hero-content {
+  text-decoration: none;
+
+  color: var(--text);
+}
 audio {
   width: 100%;
 }
