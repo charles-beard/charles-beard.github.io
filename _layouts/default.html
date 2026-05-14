@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  
+  <!-- Improved CSS link using absolute path -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav-container">
+        <a class="site-logo" href="{{ '/' | relative_url }}">
+          {% if site.title %}{{ site.title }}{% else %}Portfolio{% endif %}
+        </a>
+        <div class="nav-links">
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/works/' | relative_url }}">Works</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | default: "Portfolio" }}. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>

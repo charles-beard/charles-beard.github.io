@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<article class="composition-detail">
+  <header class="detail-header">
+    <h1>{{ page.title }}</h1>
+    <div class="metadata">
+      <p><strong>Instrumentation:</strong> {{ page.instrumentation }}</p>
+    </div>
+  </header>
+
+  <article class="composition-detail">
+  <h1>{{ page.title }}</h1>
+  
+  <!-- Single Track Player -->
+  {% if page.audio_file %}
+    <div class="audio-player-container">
+      <audio controls>
+        <source src="{{ '/assets/audio/' | append: page.audio_file | relative_url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  {% endif %}
+
+  <!-- Collection Players -->
+  {% if page.recordings %}
+    <section class="recordings-list">
+      <h2>Movements</h2>
+      {% for track in page.recordings %}
+        <div class="track-item">
+          <h3>{{ track.title }}</h3>
+          <audio controls>
+            <source src="{{ '/assets/audio/' | append: track.audio_file | relative_url }}" type="audio/wav">
+          </audio>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  <div class="detail-content">
+    {{ content }}
+  </div>
+</article>
+
+  {% if page.pdf_link %}
+    <div class="cta-container">
+      <a href="{{ page.pdf_link }}" class="btn-primary" target="_blank">View Score (PDF)</a>
+    </div>
+  {% endif %}
+</article>

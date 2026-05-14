@@ -1,0 +1,17 @@
+url: "https://charles-beard.github.io" # Replace with your GitHub username
+baseurl: ""
+
+collections:
+  compositions:
+    output: true
+    permalink: /works/:path/
+
+title: "Charles Beard"
+description: "A catalog of musical works and scores."
+url: "http://localhost:4000"
+
+header_pages:
+  - index.md
+  - about.md
+  - works.md
+  - contact.md

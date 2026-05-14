@@ -1,0 +1,453 @@
+---
+---
+
+/* 1. GLOBAL VARIABLES & RESET */
+:root {
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  --bg-light: #f9f9f9;
+  --accent: #000000;
+  --border: #eeeeee;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: "Inter", -apple-system, sans-serif;
+  color: var(--text-main);
+  background-color: #fff;
+}
+
+/* 2. THE STICKY FOOTER LAYOUT (Flex Mode) */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 0 auto; /* This forces the content to fill available space */
+}
+
+/* 3. HEADER & NAV (Polished) */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px); /* Modern frosted-glass effect */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+/* 4. FOOTER (Polished) */
+.site-footer {
+  flex-shrink: 0;
+  margin-top: auto; /* Nuclear stickiness */
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: #fff;
+  text-align: center;
+
+  p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+/* 5. HERO & HOME CONTENT */
+.hero {
+  padding: 120px 20px;
+  background-color: var(--bg-light);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+
+  /* Replace 'hero-bg.jpg' with your actual filename */
+  background-image: 
+    linear-gradient(rgba(249, 249, 249, 0.5), rgba(249, 249, 249, 0.5)), 
+    url('../images/hero-bg.jpg');
+  
+  /* These properties ensure the image covers the area and stays centered */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 120px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.04em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-content .subtitle {
+  color: #1a1a1a;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-cta a {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  margin: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.1s;
+
+  &:active { transform: scale(0.98); }
+}
+
+/* 5. HERO & HOME CONTENT */
+.home-content {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  
+  /* Center alignment logic */
+  text-align: center;
+}
+
+/* Optional: If you want to make sure the "Welcome" header 
+   looks consistent with the centered text */
+.home-content h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+}
+
+/* This ensures the paragraph doesn't get too wide to read comfortably */
+.home-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.btn-primary { background: #000; color: #fff; }
+.btn-secondary { border: 1px solid #000; color: #000; }
+
+/* WORKS PAGE STYLING */
+.works-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.works-container h1 {
+  margin-bottom: 3rem; /* Increase this value for more space */
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  /* Optional: adds a subtle line under the page title */
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.work-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stacked for mobile */
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .works-grid {
+    grid-template-columns: 1fr; /* Two columns for desktop */
+  }
+}
+
+.work-item {
+  padding: 25px;
+  border: 1px solid var(--border);
+  transition: background 0.2s ease-in-out;
+
+  position: relative;
+
+  &:hover {
+    background: var(--bg-light);
+    border-color: var(--accent);
+    transform: translateY(-2px); /* Subtle lift effect */
+    cursor: pointer;
+  }
+
+  .stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+  }
+
+  h3 {
+    margin: 0;
+    /* Ensure the text stays on top of the invisible link layer */
+    position: relative;
+    z-index: 2; 
+  }
+
+  h3 a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .work-date {
+    position: relative;
+    z-index: 2;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+}
+
+/* WORK DETAIL PAGE */
+.composition-detail {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+
+  .detail-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+    }
+
+    .metadata p {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  .main-audio, .track-item {
+    margin-bottom: 2rem;
+    background: var(--bg-light);
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .recordings-list {
+    margin: 4rem 0;
+    
+    h2 {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .track-item h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      padding-left: 5px;
+    }
+  }
+
+  .detail-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+  }
+
+  .cta-container {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+}
+
+/* REFINED BUTTON STYLING */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent); /* Black */
+  color: #fff !important;         /* Force white text */
+  padding: 1rem 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;             /* Subtle rounding */
+  transition: all 0.3s ease;
+  border: 1px solid var(--accent);
+  
+  &:hover {
+    background-color: transparent;
+    color: var(--accent) !important;
+    transform: translateY(-2px);  /* Subtle lift */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* CONTAINER FOR THE BUTTON ON DETAIL PAGES */
+.cta-container {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/* GENERIC PAGE CONTENT (About & Contact) */
+.page-content {
+  max-width: 800px;
+  margin: 80px auto; /* More breathing room at the top */
+  padding: 0 20px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+
+  .content-body {
+    line-height: 1.8;
+    font-size: 1.15rem;
+    color: var(--text-main);
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Styling for any images you might put in your bio */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 2rem 0;
+    }
+  }
+}
+
+/* SPECIFIC CONTACT PAGE STYLES */
+.contact-page {
+  .contact-methods {
+    margin-top: 3rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--accent);
+      background: var(--bg-light);
+      transform: translateX(5px); /* Subtle "slide" on hover */
+    }
+
+    .label {
+      font-weight: 700;
+      margin-right: 1rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+  }
+}
+
+.audio-player-container, .track-item {
+  margin: 1.5rem 0;
+  
+  audio {
+    width: 100%;
+    height: 40px;
+    filter: invert(0); /* You can use 'invert(1)' if you have a dark theme */
+    opacity: 0.8;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.track-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  
+  h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+  }
+}
