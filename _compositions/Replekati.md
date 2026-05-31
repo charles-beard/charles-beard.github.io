@@ -21,5 +21,5 @@ pdf_link: "/assets/scores/replekati.pdf"
 ---
 This collection of pieces was written for my Music Concentration Senior Project at Hamilton College. They follow a loose narrative outline of approaching a new challenge – the wonder of discovery, the determination to seek understanding, the placidity found in total immersion, the doubt that tests one's resolve, the supression of difficult emotions, and the joy of achievement.
 <br><br>
-These pieces have not been recorded yet; recordings will be uploaded as soon as they are available.
+N.B. These pieces have not been recorded yet; recordings will be uploaded as soon as they are available.
 

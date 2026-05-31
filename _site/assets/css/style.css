@@ -107,3 +107,5 @@ html, body { height: 100%; font-family: "Inter", -apple-system, sans-serif; colo
 
 .track-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
 .track-item h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; color: var(--text-muted); }
+
+.iframe { display: flex; align-items: center; justify-content: center; }

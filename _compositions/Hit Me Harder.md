@@ -17,3 +17,11 @@ recordings:
       audio_file: "brothers.mp3"
 ---
 The score for the short film Hit Me Harder deals with themes of grief, identity, determination, and brotherhood.
+
+<br><br>
+
+The film is available to view for free on YouTube:
+
+<br><br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xfexQvlUyY8?si=d2mvAjJ7KxaQMr78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
